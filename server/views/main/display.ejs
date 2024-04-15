@@ -1,0 +1,140 @@
+<!DOCTYPE HTML> 
+<html> 
+
+<head> 
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="app.css" rel="stylesheet" type="text/css"> 
+</head> 
+<body>
+<header >
+<div id ="wrapper">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+<div id="main_text">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+  <br>
+    <p class="lead">Hottest Fashion Trends of 2022</p>
+  </div>
+</div>
+</div>
+</header>
+
+<!--Slideshow carousel -->
+<div id ="Slideshow">
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+  <!--Data Attributes That Control the Carousel-->
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <!--Move The carousel & order the items-->
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="120000">
+     <iframe width="100%" 
+        height="300" 
+        src="https://www.youtube.com/embed/uFgcSjVRJhE"
+        title="Fashion Cinematic Video" 
+        frameborder="1" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        alt="Fashion Cinematic Video">
+        </iframe>
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="120000">
+      <iframe width="100%" 
+        height="300" 
+        src="https://www.youtube.com/embed/I10XB1-IIbA" 
+        title="DIOR Fashion Film" 
+        frameborder="1" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        alt="DIOR Fashion Film">
+        </iframe>
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="120000">
+      <iframe width="100%" 
+        height="300" 
+        src="https://www.youtube.com/embed/knQ4K0Gqm88"
+        title="Street Fashion B-Roll" 
+        frameborder="1" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        alt="Street Fashion B-Roll">
+        </iframe>
+    
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+<br>
+<!--End of Slideshow code-->
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">Pop Culture</h5>
+    <p class="card-text">Our Team Does Extensive Research on Fashion Trends Influenced by Modern Hip-Hop & Pop Culture Icons</p>
+    <p class="card-text"><small class="text-muted">Outfits Inspired By Rappers</small></p>
+  </div>
+  <img src="Assets/images/rappers-fashion.jpg" class="card-img-top" alt="..." height ="800px">
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Diversity</h5>
+    <p class="card-text">Fashion Does Not Descriminate. Our Mission is to Provide You With Fashion Trends For All Walks of Life</p>
+    <p class="card-text"><small class="text-muted">Outfits Inspired By Fashion Models</small></p>
+  </div>
+  <img src="Assets/images/lilnas.jpg" class="card-img-bottom" alt="..." height ="900px">
+</div>
+    <br>
+   <br>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Account Settings</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <table class = "table table-bordered table-striped table-hover">
+        <tr>
+            <th class = "text-center col-2">Username</th>
+            <th class = "text-center col-2">Display name</th>
+            <th class = "text-center col-2">Email</th>
+        </tr>
+        <tr>
+            <td class="text-center col-2"><%= username %></td>
+            <td class="text-center col-2"><%= displayName %></td>
+            <td class="text-center col-2"><%= email %></td>
+        </tr>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal Code end-->
+
+
+</body>
+</html>

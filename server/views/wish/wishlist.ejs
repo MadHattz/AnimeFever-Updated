@@ -1,0 +1,145 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Main Code-->
+<main>
+    <!-- Main Workout List Page displaying the current workouts entered into the database -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-10">
+                <h3><%= title %></h3>
+                <% if(typeof displayName=='string' && displayName) { %>
+                <h2> Fashion Recommendations</h2>
+                <a href = "/wishList/add" class="btn btn-outline-dark" role="button">
+                    <i class="fas fa-plus-circle"></i> Add an Apperal To Your Wish List
+                </a>
+                <br>
+                <% } %>
+                <br>
+        <!-- Table for the database items -->
+        <table class = "table table-bordered table-striped table-hover">
+        <tr>
+        <% if(typeof displayName=='string' && displayName) { %>
+            <th class = "text-center col-4">Name</th>
+            <th class = "text-center col-2">Price</th>
+            <th class = "text-center col-2">Description</th>
+            <th class = "text-center col-2">Size</th>
+            <th class = "text-center col-1"></th>
+            <th class = "text-center col-1"></th>
+            <% } else { %>
+            <th class = "text-center col-4">Name</th>
+            <th class = "text-center col-2">Price</th>
+            <th class = "text-center col-2">Description</th>
+            <th class = "text-center col-2">Size</th>
+             <% } %>
+        </tr>
+        <!-- Repeat the template-->
+        <% for (let count=0; count < wishList.length; count++) { %>
+            <tr>
+             <% if(typeof displayName=='string' && displayName) { %>
+                <td class="text-center col-4"><%= wishList[count].name %></td>
+                <td class="text-center col-2"><%= wishList[count].price %></td>
+                <td class="text-center col-2"><%= wishList[count].description %></td>
+                <td class="text-center col-2"><%= wishList[count].size %></td>
+                <td class="text-center col-1">
+                    <a href="/wishList/edit/<%= wishList[count]._id %>"
+                        class="btn btn-outline-dark">
+                        <i class="fas fa-pencil-alt"></i> Edit 
+                    </a>
+                </td>
+                <td class="text-center col-1">
+                    <a href="/wishList/delete/<%= wishList[count]._id %>"
+                        class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Delete 
+                    </a>
+                </td>
+            <% } else { %>
+            <td class="text-center col-4"><%= wishList[count].name %></td>
+            <td class="text-center col-2"><%= wishList[count].price %></td>
+            <td class="text-center col-2"><%= wishList[count].description %></td>
+            <td class="text-center col-2"><%= wishList[count].size %></td>
+            <% } %>
+            </tr>
+        <% } %>
+        </table>
+        </div>
+        </div>
+    </div>
+    <br>
+    <br>
+<div class="card-group">
+  <div class="card">
+    <img src="Assets/images/offwhite.jpg" class="card-img-top" alt="offwhite shoes">
+    <div class="card-body">
+      <h5 class="card-title">Sneaker Gear</h5>
+      <p class="card-text">Sneaker culture has become the heart of fashion among youth in 2022. If you want to improve on your fashion game
+      , start at the feet. </p>
+      <p class="card-text"><small class="text-muted">Best Sneaker Sources: 1: StockX 2: GOAT</small></p>
+      <a class="btn btn-outline-dark btn-lg m-2" href="https://stockx.com/" role="button"><i class="fa-solid fa-shoe-prints"></i>
+         StockX</a>
+        <a class="btn btn-outline-dark btn-lg m-2" href="https://www.goat.com/" role="button"><i class="fa-solid fa-socks"></i>
+         GOAT</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="Assets/images/shein.jpg" class="card-img-top" alt="shein fashion">
+    <div class="card-body">
+      <h5 class="card-title">Street Gear</h5>
+      <p class="card-text">Streetwear & Fashion is constantly evolving. For 60 years or more, the 'latest' fashion trends were gathered from runways and fashion magazines. 
+      Nowadays, it is social media influencers and streetwear culture showcasing and dictating what's cool and fresh in fashion.</p>
+      <p class="card-text"><small class="text-muted">For Fashion Inspiration: 1: Shein 2: ASOS</small></p>
+      <a class="btn btn-outline-dark btn-lg m-2" href="https://ca.shein.com/" role="button"><i class="fa-solid fa-shirt"></i>
+         Shein</a>
+        <a class="btn btn-outline-dark btn-lg m-2" href="https://www.asos.com/" role="button"><i class="fa-solid fa-vest-patches"></i>
+         ASOS</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="Assets/images/rings.jpg" height="425px" class="card-img-top" alt="ring accessories">
+    <div class="card-body">
+      <h5 class="card-title">Accessories</h5>
+      <p class="card-text">Adding accessories can make any outfit complete. The fun part is that you can choose whatever fits 
+      your style and there are no wrong answers.</p>
+      <p class="card-text"><small class="text-muted">Bling Recommendations</small></p>
+       <a class="btn btn-outline-dark btn-lg m-2" href="https://midnightcity.co/" role="button"><i class="fa-solid fa-glasses"></i>
+         Midnight City</a>
+        <a class="btn btn-outline-dark btn-lg m-2" href="https://www.amazon.ca/" role="button"><i class="fa-solid fa-hat-cowboy"></i>
+         Amazon</a>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Account Settings</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <table class = "table table-bordered table-striped table-hover">
+        <tr>
+            <th class = "text-center col-2">Username</th>
+            <th class = "text-center col-2">Display name</th>
+            <th class = "text-center col-2">Email</th>
+        </tr>
+        <tr>
+            <td class="text-center col-2"><%= username %></td>
+            <td class="text-center col-2"><%= displayName %></td>
+            <td class="text-center col-2"><%= email %></td>
+        </tr>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal Code Ends-->
+
+</main>
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

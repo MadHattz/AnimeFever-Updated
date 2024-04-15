@@ -1,0 +1,84 @@
+<!DOCTYPE HTML> 
+<html> 
+
+<head> 
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="app.css" rel="stylesheet" type="text/css"> 
+</head> 
+<body>
+<div class="Banner">
+
+</div>
+<div id="formwrapper"> 
+    <!--placeholder="Your First Name Here" size="48" size="32" required-->
+    
+    <h2>Questions or Concerns ?
+    </h2> <!--creating form action for email-->
+    <form class = "form-control-md" action="mailto:elvis.esene@ontariotechu.net" ?subject=Signup Form method="post" 
+    enctype="text/plain" name="form"> 
+    <p> 
+    <!--Putting a lable on the form parameters (email and name sections)-->
+        <label for="name" class="form-label">Name</label> 
+        <input type="text"class="form-control-sm" name="FirstName" placeholder="Your First Name Here" size="20" required> <!--Required is validation so the user has to put in data before submitting-->
+    <!--putting a placeholder text (shows bf user types, usefull for hints)-->
+        <input type="text" class="form-control-sm" name="LastName" placeholder="Your Last Name Here" size="20" required>
+    </p> 
+    <p> 
+        <label for="email" class="form-label">Email</label> 
+        <input name="email" class="form-control-sm"type="email" placeholder="Your Email Here"size="20" required> 
+    </p> 
+    <p> <!--creating a text input field, maxlength resticts the character length-->
+        <label for="comments"class="form-label">Comments?</label><br> 
+        <textarea class="form-control-md" name="comments" cols="30" rows="4" maxlength="90" size="30" ></textarea> 
+    </p>
+    <!--putting a drop down select menu-->
+    <p> 
+        <label for "where" class="form-label">How did you find Us?</label> 
+        <select name="where"> 
+        <option value="Search engine">Personal Link</option> 
+        <option value="Word of mouth">Word of mouth</option> 
+        <option value="Craigslist">Search Engine</option> 
+        <option value="Other">Other</option> 
+        </select> 
+    </p> 
+ 
+    <!--putting a sumit form button-->
+    <p><input type="submit" class="form-control-md" size="20" value="Click here to submit the form"/></p> 
+    <!--putting a rest form button-->
+    <p><input type="reset" class="form-control-md" size="20" value="Click here to reset the form"/></p>
+    </form> 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Account Settings</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <table class = "table table-bordered table-striped table-hover">
+        <tr>
+            <th class = "text-center col-2">Username</th>
+            <th class = "text-center col-2">Display name</th>
+            <th class = "text-center col-2">Email</th>
+        </tr>
+        <tr>
+            <td class="text-center col-2"><%= username %></td>
+            <td class="text-center col-2"><%= displayName %></td>
+            <td class="text-center col-2"><%= email %></td>
+        </tr>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal Code end-->
+</body>
+</html>

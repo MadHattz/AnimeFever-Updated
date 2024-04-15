@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Flipping Pancakes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    #copy {
+      text-align: left;
+    }
+
+    #jumbotron {
+      margin-bottom: 40rem;
+    }
+    
+  </style>
+</head>
+<body>
+
+
+  <div id="intro-example" class="p-5 text-center bg-image"
+    style="background-image:Assets/images/businesscard.png ">
+    <div class="mask" style="background-color: rgba(29.4, 0,51);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Welcome to the Official Flipping Pancakes Website</h1>
+          <h5 class="mb-4">
+            We don't believe in fashion for profit, we believe in fashion for purpose.
+          </h5>
+          <a class="btn btn-outline-light btn-lg m-2" href="/apparelList"
+            role="button">View Latest Apparel Items</a>
+          <% if(typeof displayName=='string' && displayName) { %>
+            <a class="btn btn-outline-light btn-lg m-2" href="/contact"
+             role="button">Need Help?</a>
+          <% } else { %> 
+          <a class="btn btn-outline-light btn-lg m-2" href="/login"
+             role="button">Member's Login</a>
+          <% } %>
+          <br>
+            <% if(typeof displayName=='string' && displayName) { %>
+                <p>See The Latest Fashion Styles + Build your own Wishlist</p>
+                <a class="btn btn-outline-light btn-lg m-2" href="/wishList"
+             role="button"> Members Exclusive WishList</a>
+            <% } else { %> 
+                    <p>Members Get An Exclusive Fashion Item. + The Ability To Create Your Very Own Wishlist</p>
+                    <br>
+                     <a class="btn btn-outline-light btn-lg m-2" href="/register"
+                  role="button">Register Now For Exclusive Benefits</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Card Img With Links-->
+<div class="card-body">
+  <div class="card-header">
+    <h4>Featured Collection</h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Fashion 2022</h5>
+    <br>
+    <p class="card-text">Classic styles are reinvented in oversized and loud colors, activewear, and streetwear styles. 
+    Stylish, innovative, affordable, and easy to pull off, see how you, too, can look the part.</p>
+    <a href="/display" class="btn btn-primary">Fashion Trends</a>
+  </div>
+</div>
+<br>
+<!-- End of Card Code-->
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="4000">
+      <img src="Assets/images/businesscard.png" alt="Los Angeles" class="d-block w-100" >
+    </div>
+    <div class="carousel-item" data-bs-interval="4000">
+      <img src="Assets/images/flippingP.png" alt="Chicago" class="d-block w-100" >
+    </div>
+    <div class="carousel-item" data-bs-interval="4000">
+      <img src="Assets/images/brands.jpeg" alt="New York" class="d-block w-100" >
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Account Settings</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <table class = "table table-bordered table-striped table-hover">
+        <tr>
+            <th class = "text-center col-2">Username</th>
+            <th class = "text-center col-2">Display name</th>
+            <th class = "text-center col-2">Email</th>
+        </tr>
+        <tr>
+            <td class="text-center col-2"><%= username %></td>
+            <td class="text-center col-2"><%= displayName %></td>
+            <td class="text-center col-2"><%= email %></td>
+        </tr>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal Code end-->
+
+
+</body>
+</html>

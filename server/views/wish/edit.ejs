@@ -1,0 +1,100 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/edit.ejs %>
+<br>
+ <!-- Content for the Edit page -->
+ <div class="container">
+    <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+        <h1><%= title %></h1>
+        <form class="form" method="post">
+            <!-- Content Field for Name -->
+            <div class="form-group">
+                <label for="nameTextField">Apperal Name</label>
+                <input type="text" class="form-control" 
+                id="nameTextField" 
+                placeholder="Enter the wish name" 
+                name="name" 
+                value="<%= wish.name %>"
+                required>
+            </div>
+            <br>
+            <!-- Content Field for Price -->
+            <div class="form-group">
+                <label for="priceTextField">Price</label>
+                <input type="text" class="form-control" 
+                id="priceTextField" 
+                placeholder="Enter the Price Tag" 
+                name="price" 
+                value="<%= wish.price %>"
+                required>
+            </div>
+            <br>
+            <!-- Content Field for Description -->
+            <div class="form-group">
+                <label for="descriptionTextField">Description</label>
+                <input type="text" class="form-control" 
+                id="descriptionTextField" 
+                placeholder="Enter product description" 
+                name="description" 
+                value="<%= wish.description %>"
+                required>
+            </div>
+            <br>
+            <!-- Content Field for Size -->
+            <div class="form-group">
+                <label for="sizeTextField">Size</label>
+                <input type="text" class="form-control" 
+                id="sizeTextField" 
+                placeholder="Enter your size" 
+                name="size" 
+                value="<%= wish.size %>"
+                required>
+            </div>
+            
+            <br>
+            <!-- Button to Submit New Database Item -->
+            <button class="btn btn-outline-dark" type="submit">
+                <i class="fas fa-edit"></i> Submit 
+            </button>
+            <!-- Button to Submit New Database Item -->
+            <a href="/wishList" class="btn btn-outline-danger">
+                Cancel
+            </a>
+
+        </form>
+        <br>
+    </div>
+    </div>
+ </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Account Settings</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <table class = "table table-bordered table-striped table-hover">
+        <tr>
+            <th class = "text-center col-2">Username</th>
+            <th class = "text-center col-2">Display name</th>
+            <th class = "text-center col-2">Email</th>
+        </tr>
+        <tr>
+            <td class="text-center col-2"><%= username %></td>
+            <td class="text-center col-2"><%= displayName %></td>
+            <td class="text-center col-2"><%= email %></td>
+        </tr>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal Code Ends-->
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

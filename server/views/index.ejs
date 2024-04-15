@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+<!-- Page Framework for Express JS functionality -->
+<main>
+<% if (title  == "HomePage") { %>
+          <%- include main/home.ejs %>
+   <%}%>
+
+   <%if (title == "Home") {%>
+           <%- include main/home.ejs %>
+   <% } %>
+
+<%if (title == "Apparels") {%>
+           <%- include apparel/list.ejs %>
+   <% } %>
+   <%if (title == "Exclusive WishList") {%>
+           <%- include wish/wishlist.ejs %>
+   <% } %>
+   <%if (title == "Display") {%>
+           <%- include main/display.ejs %>
+   <% } %>
+
+    <%if (title == "Contact Me") {%>
+           <%- include main/contactme.ejs %>
+   <% } %>
+
+
+   %>
+</main>
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
+</body>
+</html>

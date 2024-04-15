@@ -1,0 +1,71 @@
+#formwrapper{
+    font-size: large;
+    color: #d63384;
+    border-radius: 5%;
+    padding: 2%;
+    margin: 1.5rem;
+    list-style: upper-alpha;
+    display: block;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    justify-content: center;
+    
+}
+#formwrapper p{
+    color: #6610f2;
+    text-transform: uppercase;
+    font-family: fantasy;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+}
+#wrapper{
+    text-shadow: #000011;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    color: 	#0f009a;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    list-style: upper-alpha;
+    display: block;
+} 
+.card-body{
+
+    text-shadow: #000011;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    text-align: center;
+    justify-content: center;
+}
+.Banner header img{
+    height: 450px;
+}
+.Banner footer img{
+    height: 450px;
+}
+h1{
+    font-size: large;
+    color: #d9a8fc;
+    font-family: fantasy;
+    text-shadow: gold;
+    display: block;
+}
+h2{
+    color: red;
+    font-family: fantasy;
+    text-shadow: #000011;
+    display: block;
+}
+h3{
+    color: blue;
+    font-family: fantasy;
+    text-shadow: #000011;
+    display: block;
+}
+h4{
+    color: rgb(253, 118, 0);
+    font-family: fantasy;
+    text-shadow: #000011;
+    display: block;
+}
